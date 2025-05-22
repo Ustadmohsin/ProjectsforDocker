@@ -1,0 +1,14 @@
+FROM node:21
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+
+COPY ../backend/.env.sample .env.local
+
+EXPOSE 5000
+
+CMD ["npm","start"]
